@@ -1,0 +1,46 @@
+****************git 使用******************
+1. fork git 工程
+2. 下载fork的工程到本地 git clone https://github.com/panyu4/caliper.git
+3. 进入到fork的caliper目录 cd caliper
+4. 设置上游git项目 git remote add upstream https://github.com/hyperledger/caliper.git
+5. 设定不自动进行代码push 到上游项目git remote set-url --push upstream no_push
+6.  Git要求每个远程主机都必须指定一个主机名。git remote命令就用于管理主机名。
+不带选项的时候，git remote命令列出所有远程主机。使用-v选项，可以参看远程主机的网址
+	git remote -v
+7. 获取远程主机分之的更新 
+	git fetch upstream
+8. git merge命令或者git rebase命令，在本地分支上合并远程分支。
+	git rebase upstream/master
+9. git log
+10. git branch命令的-r选项，可以用来查看远程分支，-a选项查看所有分支。
+    	git branch
+11. 取回远程主机的更新以后，可以在它的基础上，使用git checkout命令创建一个新的分支
+    并切换到当年分支上
+	git checkout -B fixTypo
+12.  确认是在当年分支上
+	git branch
+----进行相关文件修改——————
+
+13. 比对与主分支上的差异，查看尚未暂存的更新
+	git diff
+14. 添加一个文件到git index
+	git add ./README.md
+15. 配置git账号
+	git config --global user.email "PY.panyu@huawei.com"
+16. 配置git账号
+	git config --global user.name "panyu4"
+17. 提交当前repos的所有的改变
+	git commit -a 提交commit 信息
+18. 修改前一次提交的方法
+	git commit --amend
+       ctrl+O enter, ctrl+x
+19. 查看commit日志
+	git log
+20. git branch
+21. git push命令用于将本地分支的更新，推送到远程主机
+	git push -f origin fixTypo
+	输入git用户名和密码
+22. 到git上可以看到有对应的提交，进行PR创建，并选择相关人员进行review
+23. 到review处，选择approve，通过。
+
+******************************************
