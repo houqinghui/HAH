@@ -1,5 +1,5 @@
-##  <center>Caliper FAQ 文档</center>
-###  一、 Closed issues
+##  <center>Caliper FAQ</center>
+###  I. Closed issues
 1. <font color="#FF0000">Q:</font> cannot read property ‘getConnectivityState’  
 <font color="#FF0000">A:</font> first executive the command `npm ls gRPC` to check wether the gRPC version is 1.10.1, if not, please executive `npm install grpc@1.10.1` at the root directory of caliper.  
 <font color="#FF0000">Corresponding Issue or questions in rocket channel:</font> Issue#206/155/91/56  <font size="5">*********************************************************************</font><br />  
@@ -90,7 +90,7 @@ b.	Lower the sending rate. Now the sending rate is much higher than actual throu
 <font color="#FF0000">A:</font> the machine cannot handle the > 100 TPS rates during the rounds when everything is running on the same host. Try lowering the TPS rates to 10 in config.json. in an environment with limited resources, the connections to the eventhubs might be abruptly closed, that is why you donnot get the notification.  
 <font color="#FF0000">Corresponding Issue or questions in rocket channel:</font>  
 <font size="5">*********************************************************************</font><br />
-###  二、 Open issues
+###  II. Open issues
 ####  1. Environment problems
 1.1 <font color="#FF0000">Q:</font>  Composer.init() failed, error: failed to load connector module ‘composer-connector-undefined’ for connection type “undefined”. Run small bank benchmark use case with multiple validator docker containers, submit batches failed, requestError: error: socket hang up at new requestError (/node_modules/request-promise-core/lib/errors.js).  but if trigger the test without commands and starting docker containers it will work properly.  
 <font color="#FF0000">Corresponding Issue or questions in rocket channel:</font> Issue#64   
@@ -145,7 +145,7 @@ b.	Lower the sending rate. Now the sending rate is much higher than actual throu
 ####  2. Bug
 2.1 <font color="#FF0000">Q:</font>  Using percpu_usage.length can cause invalid cpu statistics      
 <font color="#FF0000">Corresponding Issue or questions in rocket channel:</font> Issue#114 
-####  3.	Enhancement problems
+####  3. Enhancement problems
 3.1 <font color="#FF0000">Q:</font>  Add unified logging framework. The node sdk created a quite nice logging mechanism utilizing Winston, it could be reused in a license compatible way.      
 <font color="#FF0000">Corresponding Issue or questions in rocket channel:</font> Issue#207  
 
@@ -259,4 +259,3 @@ b.	Lower the sending rate. Now the sending rate is much higher than actual throu
 5.12 <font color="#FF0000">Q:</font>  Why debug make error, while run is ok?       
 <font color="#FF0000">Corresponding Issue or questions in rocket channel:</font> Issue#39  
 <font color="#FF0000">label:</font>  1 or 2  
-
