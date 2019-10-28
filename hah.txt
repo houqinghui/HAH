@@ -2,3 +2,7 @@
 open and share
 todd.little@oracle.com
 Error: Your transaction wasn't commited: expected: MST_PENDING,COMMITTED, actual=STATELESS_VALIDATION_FAILED
+ak: TNTIIZ1UJN2R8FCEVXYK
+sk: I08YaI3GoSqdUJhHbN94gOJeujsGC7CG53N31hpQ
+endpoint: obs.cn-north-1.myhuaweicloud.com
+bucketName: small-file-test
