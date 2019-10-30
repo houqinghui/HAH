@@ -6,3 +6,6 @@ ak: TNTIIZ1UJN2R8FCEVXYK
 sk: I08YaI3GoSqdUJhHbN94gOJeujsGC7CG53N31hpQ
 endpoint: obs.cn-north-1.myhuaweicloud.com
 bucketName: small-file-test
+https://lfdswebdevapi01.hwcloudtest.cn:17062/josp/hms/gwService
+https://developerlfdev.hwcloudtest.cn/consumer/cn/service/josp/agc/index.html
+https://developerlf.hwcloudtest.cn/consumer/cn/service/josp/agc/index.html
