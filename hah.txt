@@ -9,3 +9,6 @@ bucketName: small-file-test
 https://lfdswebdevapi01.hwcloudtest.cn:17062/josp/hms/gwService
 https://developerlfdev.hwcloudtest.cn/consumer/cn/service/josp/agc/index.html
 https://developerlf.hwcloudtest.cn/consumer/cn/service/josp/agc/index.html
+"productId":"98264260194312345",
+"secretKey":"Gky28FKe+oIuqsmd/jhZ4C584Oc="
+"accessKey":"UUz2P1ax6MIDmw=="
