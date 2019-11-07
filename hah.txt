@@ -12,3 +12,6 @@ https://developerlf.hwcloudtest.cn/consumer/cn/service/josp/agc/index.html
 "productId":"98264260194312345",
 "secretKey":"Gky28FKe+oIuqsmd/jhZ4C584Oc="
 "accessKey":"UUz2P1ax6MIDmw=="
+
+
+\"clouddb_sk\":\"9DDA9D17B8366B45D4D44E746FDBFFE172ACF3F8\",\"clouddb_ak\":\"BB00C59A890F4313641D\"
