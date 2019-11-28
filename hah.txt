@@ -21,3 +21,65 @@ https://developerlf.hwcloudtest.cn/consumer/cn/service/josp/agc/index.html
 
 
 {\"FAAS_FUNCTION_NAME\":\"faas1128\",\"FAAS_FUNCTION_DEPLOY_DIR\":\"/dcache/layer/func\",\"FAAS_LAYER_DEPLOY_DIR\":\"/dcache/layer\",\"FAAS_FUNCTION_TIMEOUT\":\"900\",\"clouddb_ak\":\"14FE38C4EA8F3B9D8072\",\"clouddb_sk\":\"5D00B6DEADB4A788CD204E7DFF5FEB0E611E2307\"}",
+
+
+查看是否允许使用create select语句
+show variables like 'ENFORCE_GTID_CONSISTENCY';
+设置允许使用create select语句，修改配置文件 /etc/my.cfg
+注释掉这2行
+#enforce-gtid-consistency=true
+#gtid-mode = ON
+
+确认其已经关闭
+mysql> show variables like 'ENFORCE_GTID_CONSISTENCY';
++--------------------------+-------+
+| Variable_name            | Value |
++--------------------------+-------+
+| enforce_gtid_consistency | OFF   |
++--------------------------+-------+
+1 row in set (0.00 sec)
+
+如果存在删除临时表
+drop table if exists tmp99;
+
+
+
+创建临时表 (可以使用show create table StudentNew 来查看目标表结构)
+
+CREATE TABLE `tmp99` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `gender` varchar(200) COLLATE utf8_bin DEFAULT NULL,
+  `stringType` varchar(200) COLLATE utf8_bin DEFAULT NULL,
+  `integerType` int(11) DEFAULT NULL,
+  `shortType` smallint(6) DEFAULT NULL,
+  `longType` bigint(20) DEFAULT NULL,
+  `floatType` double DEFAULT NULL,
+  `doubleType` double DEFAULT NULL,
+  `booleanType` tinyint(1) DEFAULT NULL,
+  `byteType` tinyint(1) DEFAULT NULL,
+  `dateType` bigint(20) DEFAULT NULL,
+  `byteArray` longblob,
+  `textType` longtext COLLATE utf8_bin,
+  `name` varchar(200) COLLATE utf8_bin DEFAULT NULL,
+  `naturalbase_version` bigint(20) NOT NULL,
+  `naturalbase_creator` varchar(25) COLLATE utf8_bin NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `s_StudentNew_natural_version_index` (`naturalbase_version`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin 
+
+
+(复制表结构    create table tmp66 as select * from StudentNew;)
+
+
+
+从原始的StudentNew中拷贝到临时表tmp99 中， 不要选id这个字段即可
+insert into tmp99 (gender,stringType,integerType,shortType,longType,floatType,doubleType,booleanType,byteType,dateType,byteArray,textType,name,naturalbase_version,naturalbase_creator) select gender,stringType,integerType,shortType,longType,floatType,doubleType,booleanType,byteType,dateType,byteArray,textType,name,naturalbase_version,naturalbase_creator from StudentNew;
+
+
+临时表翻倍
+insert into tmp99 (gender,stringType,integerType,shortType,longType,floatType,doubleType,booleanType,byteType,dateType,byteArray,textType,name,naturalbase_version,naturalbase_creator) select gender,stringType,integerType,shortType,longType,floatType,doubleType,booleanType,byteType,dateType,byteArray,textType,name,naturalbase_version,naturalbase_creator from tmp99;
+
+
+数据查回到StudentNew中   （ delete from StudentNew;  truncate table StudentNew;）
+insert into StudentNew select * from tmp99;
+
