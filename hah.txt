@@ -16,4 +16,5 @@ https://developerlf.hwcloudtest.cn/consumer/cn/service/josp/agc/index.html
 
 \"clouddb_sk\":\"9DDA9D17B8366B45D4D44E746FDBFFE172ACF3F8\",\"clouddb_ak\":\"BB00C59A890F4313641D\"
 
-{"result":{"productId":"98433080309582028","secretKey":"230939C3E27D29DC3458EAF307E73E77925EDAE5","accessKey":"D0282332C3163554CD8F"},"code":0,"message":"SUCCESS"}
+
+{\"FAAS_FUNCTION_NAME\":\"hou1128\",\"FAAS_FUNCTION_DEPLOY_DIR\":\"/dcache/layer/func\",\"FAAS_LAYER_DEPLOY_DIR\":\"/dcache/layer\",\"FAAS_FUNCTION_TIMEOUT\":\"900\",\"clouddb_sk\":\"D1428844FD056AF46A8D546E8EC09EE41AC7F75B\",\"clouddb_ak\":\"CC72A4841D4DB54228BC\"}",
